@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [isLightMode, setIsLightMode] = useState(false);
 
   const linkedinUrl = "https://www.linkedin.com/in/aditya-pawar-557a56332/";
+  const token = import.meta.env.VITE_GITHUB_TOKEN;
 
   const timeline: TimelineItem[] = [
     { year: "2019", title: "The Spark", desc: "Started journey from Madhya Pradesh, following my brother's footsteps into the digital world." },
@@ -26,7 +27,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       const [projData, contData] = await Promise.all([
-        fetchProjects('AdityaByte'),
+        fetchProjects('AdityaByte', token as string),
         fetchContributions('AdityaByte')
       ]);
       setProjects(projData);
