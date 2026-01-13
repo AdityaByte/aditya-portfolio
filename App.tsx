@@ -79,15 +79,40 @@ const App: React.FC = () => {
               <a href="mailto:adityabyte@gmail.com" className={`px-6 py-2.5 rounded-full border transition-all text-xs font-black uppercase tracking-wider shadow-sm ${isLightMode ? 'border-black bg-black text-white hover:bg-zinc-800' : 'border-white bg-white text-black hover:bg-zinc-200'}`}>Hire Me</a>
               <button
                 onClick={toggleTheme}
-                className={`w-10 h-10 flex items-center justify-center rounded-full border transition-all outline-none ${isLightMode ? 'border-black/10 text-black hover:bg-black/5' : 'border-white/10 text-white hover:bg-white/5'}`}
+                className={`w-10 h-10 flex items-center justify-center rounded-full border transition-all outline-none ${isLightMode
+                    ? 'border-black/10 text-black hover:bg-black/5'
+                    : 'border-white/10 text-white hover:bg-white/5'
+                  }`}
                 aria-label="Toggle Theme"
               >
                 {isLightMode ? (
-                  <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                  </svg>
                 ) : (
-                  <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="12" cy="12" r="5" />
+                    <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                  </svg>
                 )}
               </button>
+
             </div>
 
             <button className="lg:hidden z-[110] p-2" aria-label="Toggle Menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
